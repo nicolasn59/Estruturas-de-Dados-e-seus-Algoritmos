@@ -1,9 +1,8 @@
-#include "TAB_04.h"
+#include "TAB_03.h"
 
 int main(void){
-    // Inicializando árvore
-    TAB *a = NULL;
-
+    TAB *a = NULL; // Inicializando a árvore
+    
     // Lado esquerdo da raiz
     TAB *no1 = cria(3, NULL, NULL);
     TAB *no2 = cria(13, NULL, NULL);
@@ -18,10 +17,10 @@ int main(void){
     a = cria(7, no3, no6);
     
     printf("Arvore: ");
-    imprime_pre(a);
+    imprime_pos(a);
     printf("\n");
-    TAB *no_min = menor(a);
-    printf("Menor No: %d\n", no_min->info);
+    TAB *no_max = maior(a);
+    printf("Maior No: %d\n", no_max->info);
     libera(a);
-    
+    return 0;
 }
