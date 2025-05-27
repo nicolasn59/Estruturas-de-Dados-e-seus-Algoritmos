@@ -10,5 +10,7 @@ int main(void){
     TLSE *l2 = copia(l1);
     imprimeLista(l1);
     imprimeLista(l2);
+    libera(l1);
+    libera(l2);
     return 0;
 }

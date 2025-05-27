@@ -17,5 +17,7 @@ int main(void){
     else{
         printf("NAO SAO INVERSAS!\n");
     }
+    libera(l1);
+    libera(l2);
     return 0;
 }

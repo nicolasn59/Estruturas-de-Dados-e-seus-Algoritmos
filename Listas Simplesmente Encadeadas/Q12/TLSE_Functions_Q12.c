@@ -1,9 +1,18 @@
 #include "TLSE_Q12.h"
 
-TLSE *alocaNo(){
+static TLSE *alocaNo(){
     TLSE *no = (TLSE*) malloc(sizeof(TLSE));
     no->prox = NULL;
     return no;
+}
+
+void libera(TLSE *l) {
+    TLSE *tmp;
+    while (l) {
+        tmp = l;
+        l = l->prox;
+        free(tmp);
+    }
 }
 
 TLSE *insereFinal(TLSE *l, int elem){

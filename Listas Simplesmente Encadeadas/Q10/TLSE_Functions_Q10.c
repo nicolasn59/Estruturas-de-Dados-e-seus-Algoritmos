@@ -1,9 +1,18 @@
 #include "TLSE_Q10.h"
 
-TLSE *alocaNo(){
+static TLSE *alocaNo(){
     TLSE *no = (TLSE*) malloc(sizeof(TLSE));
     no->prox = NULL;
     return no;
+}
+
+void libera(TLSE *l) {
+    TLSE *tmp;
+    while (l) {
+        tmp = l;
+        l = l->prox;
+        free(tmp);
+    }
 }
 
 TLSE *insereFinal(TLSE *l, int elem){
@@ -23,7 +32,7 @@ TLSE *insereFinal(TLSE *l, int elem){
     return l;
 }
 
-TLSE *insereInicio(TLSE *l, int elem){
+static TLSE *insereInicio(TLSE *l, int elem){
     TLSE *novoNo = alocaNo();
     novoNo->info = elem;
     if (l){
@@ -50,7 +59,7 @@ void imprimeLista(TLSE *l){
     printf("LISTA VAZIA!\n");
 }
 
-TLSE *copia_inversa(TLSE *l){
+static TLSE *copia_inversa(TLSE *l){
     if (l){
         TLSE *l_copia = NULL, *aux = l;
         while (aux != NULL){
@@ -62,7 +71,7 @@ TLSE *copia_inversa(TLSE *l){
     return NULL;
 }
 
-int lenght(TLSE *l){
+static int length(TLSE *l){
     TLSE *aux = l; 
     int len=0;
     while (aux != NULL){
@@ -72,13 +81,12 @@ int lenght(TLSE *l){
     return len;
 }
 
-
-int igual(TLSE *l1, TLSE *l2){
+static int igual(TLSE *l1, TLSE *l2){
     if ((l1 == NULL) && (l2 == NULL)){
         return 1;
     }
     else{
-        if (lenght(l1) != lenght(l2)){
+        if (length(l1) != length(l2)){
             return 0;
         }
         else{

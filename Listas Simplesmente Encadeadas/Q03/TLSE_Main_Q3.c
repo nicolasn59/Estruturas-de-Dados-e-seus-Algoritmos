@@ -13,5 +13,6 @@ int main(void){
     scanf("%d", &num);
     l1 = desloca(l1, num);
     imprimeLista(l1);
+    libera(l1);
     return 0;
 }

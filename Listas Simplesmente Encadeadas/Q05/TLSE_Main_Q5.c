@@ -18,5 +18,6 @@ int main(void){
     printf("%d\n", num);
     l1 = rto(l1, num);
     imprimeLista(l1);
+    libera(l1);
     return 0;
 }

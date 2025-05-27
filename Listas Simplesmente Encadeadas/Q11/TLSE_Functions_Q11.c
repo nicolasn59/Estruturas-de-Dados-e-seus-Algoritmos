@@ -1,9 +1,18 @@
 #include "TLSE_Q11.h"
 
-TLSE *alocaNo(){
+static TLSE *alocaNo(){
     TLSE *no = (TLSE*) malloc(sizeof(TLSE));
     no->prox = NULL;
     return no;
+}
+
+void libera(TLSE *l) {
+    TLSE *tmp;
+    while (l) {
+        tmp = l;
+        l = l->prox;
+        free(tmp);
+    }
 }
 
 TLSE *insereFinal(TLSE *l, int elem){
@@ -23,7 +32,7 @@ TLSE *insereFinal(TLSE *l, int elem){
     return l;
 }
 
-TLSE *insereInicio(TLSE *l, int elem){
+static TLSE *insereInicio(TLSE *l, int elem){
     TLSE *novoNo = alocaNo();
     novoNo->info = elem;
     if (l){
@@ -49,7 +58,7 @@ void imprimeLista(TLSE *l){
     printf("LISTA VAZIA!\n");
 }
 
-TLSE *copia(TLSE *l1, TLSE *l2){
+static TLSE *copia(TLSE *l1, TLSE *l2){
     if (l1){
         TLSE *l_copia = NULL, *aux = l1;
         while (aux != NULL){
@@ -61,7 +70,7 @@ TLSE *copia(TLSE *l1, TLSE *l2){
     return NULL;
 }
 
-int lenght(TLSE *l){
+static int length(TLSE *l){
     TLSE *aux = l; 
     int len=0;
     while (aux != NULL){
@@ -74,7 +83,7 @@ int lenght(TLSE *l){
 TLSE *ordena(TLSE *l){
     TLSE *l_copia, *aux;
     l_copia = copia(l, l_copia);
-    int len = lenght(l_copia);
+    int len = length(l_copia);
     if (len > 1){
         for (int i=0; i < len; i++){
             aux = l_copia;

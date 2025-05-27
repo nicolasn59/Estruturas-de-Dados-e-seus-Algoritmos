@@ -7,8 +7,7 @@ typedef struct lista{
     struct lista *prox;
 } TLSE;
 
-
-TLSE * alocaNo();  // ALOCA UM NOVO NÓ DINAMICAMENTE
+void libera(TLSE *l);
 TLSE * insereFinal(TLSE *l, int elem);  // INSERE O NÓ ALOCADO AO FINAL DA TLSE
 void imprimeLista(TLSE *l); // IMPRIME TODA A TLSE
 void inverte(TLSE **l);  // IMPRIME A TLSE INVERTIDA

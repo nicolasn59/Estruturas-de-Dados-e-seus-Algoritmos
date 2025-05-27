@@ -10,5 +10,6 @@ int main(){
     imprimeLista(l);
     inverte(&l);
     imprimeLista(l);
+    libera(l);
     return 0;
 }

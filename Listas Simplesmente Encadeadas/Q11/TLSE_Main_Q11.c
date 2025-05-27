@@ -15,5 +15,7 @@ int main (void){
     imprimeLista(l1);
     l2 = ordena(l1);
     imprimeLista(l2);
+    libera(l1);
+    libera(l2);
     return 0;
 }

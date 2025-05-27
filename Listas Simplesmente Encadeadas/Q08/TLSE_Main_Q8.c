@@ -50,6 +50,7 @@ int main(void){
     else{
         printf("\nAs duas listas sao diferentes!\n\n");
     }
-
+    libera(l1);
+    libera(l2);
     return 0;
 }

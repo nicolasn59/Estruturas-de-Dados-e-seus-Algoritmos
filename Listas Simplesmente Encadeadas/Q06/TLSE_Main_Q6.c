@@ -18,5 +18,7 @@ int main(void){
     printf("Lista 2: ");
     imprimeLista(l2);
     printf("\n");
+    libera(l1);
+    libera(l2);
     return 0;
 }

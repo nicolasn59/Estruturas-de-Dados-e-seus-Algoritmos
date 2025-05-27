@@ -6,7 +6,7 @@ typedef struct lista{
     struct lista *prox;
 } TLSE;
 
-TLSE *alocaNo();
+void libera(TLSE *l);
 TLSE *insereFinal(TLSE *l, int elem);
 void imprimeLista(TLSE *l);
 void i_p(TLSE **l); // Passagem por referência para alterar a lista na main

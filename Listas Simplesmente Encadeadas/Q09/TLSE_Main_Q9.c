@@ -14,5 +14,7 @@ int main(void){
 
     l1 = junta_listas(l1, l2);
     imprimeLista(l1);
+    libera(l1);
+    libera(l2);
     return 0;
 }

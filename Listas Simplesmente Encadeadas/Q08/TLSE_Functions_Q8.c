@@ -1,9 +1,18 @@
 #include "TLSE_Q8.h"
 
-TLSE *alocaNo(){
+static TLSE *alocaNo(){
     TLSE *no = (TLSE*) malloc(sizeof(TLSE));
     no->prox = NULL;
     return no;
+}
+
+void libera(TLSE *l) {
+    TLSE *tmp;
+    while (l) {
+        tmp = l;
+        l = l->prox;
+        free(tmp);
+    }
 }
 
 TLSE * insereFinal(TLSE *l, int elem){
@@ -41,7 +50,7 @@ int igual(TLSE *l1, TLSE *l2){
         return 1; 
     }
     else if ((l1 != NULL) && (l2 != NULL)){
-        if (lenght(l1) != lenght(l2)){
+        if (length(l1) != length(l2)){
             return 0;
         }
         else{
@@ -58,7 +67,7 @@ int igual(TLSE *l1, TLSE *l2){
     return 1;
 }
 
-int lenght(TLSE *l){
+static int length(TLSE *l){
     TLSE *aux = l;
     int len = 0;
     while (aux != NULL){

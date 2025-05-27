@@ -1,9 +1,18 @@
 #include "TLSE_Q6.h"
 
-TLSE *alocaNo(){
+static TLSE *alocaNo(){
     TLSE *no = (TLSE*) malloc(sizeof(TLSE));
     no->prox = NULL;
     return no;
+}
+
+void libera(TLSE *l) {
+    TLSE *tmp;
+    while (l) {
+        tmp = l;
+        l = l->prox;
+        free(tmp);
+    }
 }
 
 TLSE *insereInicio(TLSE *l, int elem){
@@ -19,7 +28,7 @@ TLSE *insereInicio(TLSE *l, int elem){
     return l;
 }
 
-TLSE * insereFinal(TLSE *l, int elem){
+static TLSE * insereFinal(TLSE *l, int elem){
     TLSE *novoNo = alocaNo();
     novoNo->info = elem;
     if (l){

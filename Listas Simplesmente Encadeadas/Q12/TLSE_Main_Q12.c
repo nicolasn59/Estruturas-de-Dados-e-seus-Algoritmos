@@ -15,6 +15,6 @@ int main(void){
     imprimeLista(l1);
     ordena(l1);
     imprimeLista(l1);
-    
+    libera(l1);
     return 0;
 }

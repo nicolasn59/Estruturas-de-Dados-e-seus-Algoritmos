@@ -11,5 +11,7 @@ int main(void){
     TLSE *l2 = inverte(l);
     imprimeLista(l);
     imprimeLista(l2);
+    libera(l);
+    libera(l2);
     return 0;
 }

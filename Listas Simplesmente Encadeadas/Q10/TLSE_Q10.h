@@ -6,11 +6,7 @@ typedef struct lista{
     struct lista *prox;
 } TLSE;
 
-TLSE *alocaNo();
+void libera(TLSE *l);
 TLSE *insereFinal(TLSE *l, int elem);
-TLSE *insereInicio(TLSE *l, int elem);
 void imprimeLista(TLSE *l);
-TLSE *copia_inversa(TLSE *l);
-int lenght(TLSE *l);
-int igual(TLSE *l1, TLSE *L2);
 int Contrario(TLSE *l1, TLSE *l2);

@@ -17,8 +17,7 @@ int main(void){
     printf("Lista 1 - Depois: ");
     imprimeLista(l1);
     printf("\n");
-
-
+    libera(l1);
     return 0;
 }
 
